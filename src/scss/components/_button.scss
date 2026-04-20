@@ -1,0 +1,63 @@
+@use '../utils/variables' as *;
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 12px 24px;
+
+	font-size: 13px;
+	text-transform: uppercase;
+	font-family: $font-main;
+	font-weight: 400;
+
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	border: 1px solid transparent;
+	text-decoration: none;
+}
+
+.btn--white {
+	background: $bg-white;
+	color: $color-main;
+
+	&:hover {
+		background: $bg-pink;
+		color: $color-white;
+	}
+}
+
+.btn--pink {
+	background: $bg-pink;
+	color: $color-white;
+
+	&:hover {
+		background: $bg-white;
+		color: $color-main;
+		border: 1px solid #052e4c;
+	}
+}
+
+.btn--outline-white {
+	background: transparent;
+	border: 1px solid white;
+	color: $color-white;
+
+	&:hover {
+		background: $bg-pink;
+		color: $color-pink;
+	}
+}
+
+.btn--outline-black {
+	background: transparent;
+	border: 1px solid #052e4c;
+	color: $color-main;
+
+	&:hover {
+		background: $bg-pink;
+		color: $color-pink;
+	}
+}
