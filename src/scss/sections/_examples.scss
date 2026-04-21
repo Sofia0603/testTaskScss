@@ -2,8 +2,8 @@
 @use "../utils/variables" as *;
 
 .examples {
-	margin-bottom: 130px;
-	height: 660px;
+  margin-bottom: 130px;
+  height: 660px;
   &__wrapper {
     padding-top: 96px;
     background-color: $bg-dark-green;
@@ -14,11 +14,24 @@
     flex-direction: column;
     gap: 40px;
   }
-  &_header {
+  &__header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
+  &__actions {
+    display: flex;
+    gap: 28px;
+    &-button {
+      &:hover {
+        svg path {
+          fill: $color-pink;
+        }
+      }
+    }
+  }
+
   &__title {
     font-family: $font-secondary;
     font-weight: 500;
@@ -41,7 +54,7 @@
       font-family: var(--font-family);
       font-weight: 400;
       font-size: 16px;
-			line-height: 1.2;
+      line-height: 1.2;
     }
     &__image {
       img {

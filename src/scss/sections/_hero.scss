@@ -2,62 +2,99 @@
 @use "../utils/variables" as *;
 
 .hero {
-  background-image: url("/images/hero.png");
+  // background-image: url("/images/hero.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   width: 100%;
+  position: relative;
 
   &__inner {
     display: flex;
     justify-content: space-between;
-		
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     gap: 24px;
-		color: $color-main;
-		margin-top: 168px;
+    color: $color-main;
+    margin-top: 168px;
     &-title {
       font-family: $font-third;
       font-size: 78px;
       text-transform: uppercase;
       font-weight: 300;
-			line-height: 1;
+      line-height: 1;
       span {
         font-style: italic;
         font-weight: 600;
       }
+      @include tablet {
+         font-size: 60px;
+      }
+      @include small {
+         font-size: 42px;
+      }
     }
-		&-subtitle{
-			max-width: 477px;
-		}
+    &-subtitle {
+      max-width: 477px;
+    }
+
+    @include tablet {
+      margin-top: 110px;
+    }
+    @include small {
+      margin-top: 48px;
+			gap: 35px;
+    }
   }
 
-	&__action{
-		margin-top: 56px;
-		display: flex;
-		align-self: flex-start;
-		gap: 17px;
-		align-items: center;
-		&-basket{
-			padding: 0;
-			width: 40px;
-			height: 40px;
-			background-color: $bg-white;
-			border-radius: 100%;
-			&:hover{
-				background-color: $bg-pink;
-				svg path{
-					stroke: $color-white;
-				}
-				svg circle {
-					stroke: $color-white;
-				}
-			}
-		}
+  &__action {
+    margin-top: 56px;
+    display: flex;
+    align-self: flex-start;
+    gap: 17px;
+    align-items: center;
+    &-basket {
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      background-color: $bg-white;
+      border-radius: 100%;
+      &:hover {
+        background-color: $bg-pink;
+        svg path {
+          stroke: $color-white;
+        }
+        svg circle {
+          stroke: $color-white;
+        }
+      }
+    }
+
+		@include tablet {
+      display: none;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    &-button {
+      &:hover {
+        svg path {
+          fill: $color-pink;
+        }
+      }
+    }
+  }
+
+	@include small {
+	height: calc(100vh - 80px);
 	}
 }

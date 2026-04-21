@@ -1,0 +1,23 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.header {
+  padding: 20px 0;
+  display: none;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    color: $color-dark-green;
+  }
+	
+  @include tablet {
+    display: block;
+  }
+}

@@ -7,6 +7,10 @@
   &__inner {
     background-color: $bg-light-green;
     padding: 56px;
+
+    @include mobile {
+      padding: 48px 20px;
+    }
   }
   &__fieldset {
     border: 1px solid $color-dark-green;
@@ -14,6 +18,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include mobile {
+     padding: 24px 24px 40px 24px;
+    }
   }
   &__legend {
     padding: 0 10px;
@@ -36,6 +43,9 @@
     text-align: center;
     color: $color-main;
     margin-bottom: 16px;
+    @include mobile {
+      display: none;
+    }
   }
   &__progress {
     display: flex;
@@ -85,6 +95,9 @@
     gap: 16px 100px;
     margin-top: 48px;
     margin-bottom: 42px;
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__option {

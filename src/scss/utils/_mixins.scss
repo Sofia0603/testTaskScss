@@ -6,13 +6,7 @@
   align-items: center;
 }
 
-@mixin section-label(
-  $text,
-  $top: 100px,
-  $left: 80px,
-  $size: 300px,
-  $color: $color-white
-) {
+@mixin section-label($text, $top: 100px, $left: 80px, $size: 18rem, $color: $color-white) {
   position: relative;
 
   &::before {
@@ -24,7 +18,7 @@
     font-family: $font-secondary;
     font-style: italic;
     font-weight: 400;
-    font-size: $size;
+    font-size: clamp(5rem, 21vw, 25rem);
     line-height: 1;
     letter-spacing: -0.04em;
 
@@ -33,10 +27,30 @@
 
     pointer-events: none;
     z-index: 0;
+    @include mobile {
+      left: 20px;
+    }
   }
 
   > * {
     position: relative;
     z-index: 1;
+  }
+}
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: 500px) {
+    @content;
   }
 }

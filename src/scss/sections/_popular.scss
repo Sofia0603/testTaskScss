@@ -2,17 +2,25 @@
 @use "../utils/variables" as *;
 
 .popular {
- 
   position: relative;
   height: 672px;
   background: linear-gradient(to right, $bg-dark-green 0%, $bg-dark-green calc(100% - 160px), $bg-dark-blue calc(100% - 160px), $bg-dark-blue 100%);
   margin-bottom: 130px;
 
   @include section-label("Популярное", -5px, 88px, 300px);
+
   &__container {
     max-width: 1120px;
     margin-left: 88px;
     padding-top: 192px;
+    margin-right: 20px;
+    @include mobile {
+      margin-left: 20px;
+      padding-top: 80px;
+    }
+    @include small {
+      padding-top: 58px;
+    }
   }
   &__list {
     display: grid;
@@ -82,6 +90,33 @@
         font-weight: 400;
         font-style: normal;
       }
+
+      @include mobile {
+        font-size: 22px;
+        padding: 24px;
+      }
+      @include small {
+        height: 150px;
+      }
     }
+
+    @include mobile {
+      height: 350px;
+      padding-bottom: 48px;
+    }
+    @include small {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+  }
+  @include mobile {
+    height: max-content;
+    margin-bottom: 48px;
+    background: linear-gradient(to bottom, $bg-dark-green 0%, $bg-dark-green calc(100% - 48px), $bg-dark-blue calc(100% - 160px), $bg-dark-blue 100%);
+  }
+  @include small {
+    height: auto;
+
   }
 }

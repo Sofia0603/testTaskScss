@@ -30,7 +30,14 @@
     -ms-user-select: none;
     user-select: none;
   }
+  &__logo-open {
+    display: none;
 
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
   &__button {
     transition: background-color 0.3s ease;
     margin-bottom: 48px;
@@ -40,7 +47,6 @@
       }
     }
   }
-
   &__nav {
     &-list {
       display: flex;
@@ -71,6 +77,17 @@
         }
       }
     }
+    &-text {
+      opacity: 0;
+      display: none;
+      transform: translateX(-10px);
+      white-space: nowrap;
+      margin-left: 0;
+
+      transition: 0.3s ease;
+      pointer-events: none;
+      color: $color-dark-green;
+    }
   }
   &__search {
     @include flex-center;
@@ -80,43 +97,39 @@
     width: 25px;
     height: 25px;
   }
-}
-.sidebar__logo-open {
-  display: none;
 
-  font-weight: 400;
-  font-size: 40px;
-  text-align: center;
-  margin-bottom: 14px;
-}
+  &__open-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 41px;
+    display: none;
+  }
+  &__open-address {
+    font-size: 10px;
+  }
+  &__open-phones {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  &__open-phone {
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $color-pink;
+    }
+  }
 
-.sidebar__open-info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-  margin-bottom: 41px;
-  display: none;
-}
-.sidebar__open-address {
-  font-size: 10px;
-}
-.sidebar__open-phones {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.sidebar__open-phone {
-  font-weight: 400;
-  font-size: 13px;
-  text-transform: uppercase;
-  text-align: center;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: $color-pink;
+  @include tablet {
+   display: none;
   }
 }
+
 .sidebar--open {
   position: fixed;
   top: 0;
@@ -124,18 +137,6 @@
   height: 100vh;
   width: 224px;
   z-index: 1000;
-}
-
-.sidebar__nav-text {
-  opacity: 0;
-  display: none;
-  transform: translateX(-10px);
-  white-space: nowrap;
-  margin-left: 0;
-
-  transition: 0.3s ease;
-  pointer-events: none;
-  color: $color-dark-green;
 }
 
 .sidebar--open .sidebar__nav-text {

@@ -2,37 +2,77 @@
 @use "../utils/variables" as *;
 
 .offers {
-	margin-bottom: 130px;
+  margin-bottom: 130px;
   &__inner {
     display: flex;
     flex-direction: column;
     gap: 22px;
+    @include small {
+      gap: 32px;
+    }
   }
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  &__title {
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &-button {
+      transition: fill 0.3s ease;
+      &:hover {
+        svg path {
+          fill: $color-pink;
+        }
+      }
+    }
+    @include small {
+      display: none;
+    }
+  }
 
   &__content {
     display: flex;
     gap: 32px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-right: -40px;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include tablet {
+      gap: 24px;
+    }
   }
   &__card {
     max-width: 256px;
-		height: 536px;
+    height: 536px;
     padding: 16px 16px 40px 16px;
     transition: background-color 0.3s ease;
     cursor: pointer;
-		display: flex;
-		flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-
-    &-image {
+    &-media {
       position: relative;
       width: 224px;
       height: auto;
       margin-bottom: 24px;
+    }
+    &-img {
+      @include tablet {
+        height: 246px;
+        width: 224px;
+      }
     }
     &-badge {
       @include flex-center;
@@ -82,10 +122,9 @@
       }
 
       &--active {
-
         &::after {
-          opacity: 1; 
-          border: none; 
+          opacity: 1;
+          border: none;
         }
 
         &::before {
@@ -100,7 +139,7 @@
           border-radius: 50%;
           background: transparent;
           pointer-events: none;
-          z-index: 1; 
+          z-index: 1;
         }
       }
     }
@@ -114,7 +153,7 @@
     &-price {
       display: flex;
       align-items: flex-end;
-			margin-top: auto;
+      margin-top: auto;
       gap: 12px;
       margin-bottom: 16px;
       font-family: $font-third;
@@ -157,11 +196,11 @@
     &-button {
       padding: 0;
       transition: color 0.3s ease;
-      &:hover{
-        svg path{
+      &:hover {
+        svg path {
           stroke: $color-pink;
         }
-        svg circle{
+        svg circle {
           stroke: $color-pink;
         }
       }
@@ -169,6 +208,23 @@
 
     &:hover {
       background-color: rgba(227, 246, 245, 0.3);
+      @include mobile {
+         background-color: transparent;
+      }
     }
+
+    &:last-child {
+      margin-right: 40px;
+    }
+    @include tablet {
+      padding: 0;
+      height: 480px;
+    }
+    @include mobile {
+      height: 444px;
+    }
+  }
+  @include mobile {
+    margin-bottom: 48px;
   }
 }
