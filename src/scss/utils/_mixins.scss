@@ -1,5 +1,42 @@
+@use "../utils/variables" as *;
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin section-label(
+  $text,
+  $top: 100px,
+  $left: 80px,
+  $size: 300px,
+  $color: $color-white
+) {
+  position: relative;
+
+  &::before {
+    content: $text;
+    position: absolute;
+    top: $top;
+    left: $left;
+
+    font-family: $font-secondary;
+    font-style: italic;
+    font-weight: 400;
+    font-size: $size;
+    line-height: 1;
+    letter-spacing: -0.04em;
+
+    color: $color;
+    opacity: 0.05;
+
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 }

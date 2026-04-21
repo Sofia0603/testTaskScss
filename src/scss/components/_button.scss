@@ -11,12 +11,14 @@
 	text-transform: uppercase;
 	font-family: $font-main;
 	font-weight: 400;
-
+	line-height: 1;
 	cursor: pointer;
 	transition: all 0.2s ease;
 
 	border: 1px solid transparent;
 	text-decoration: none;
+
+	width: max-content;
 }
 
 .btn--white {
@@ -36,28 +38,29 @@
 	&:hover {
 		background: $bg-white;
 		color: $color-main;
-		border: 1px solid #052e4c;
+		border: 1px solid$color-main;
 	}
 }
 
 .btn--outline-white {
 	background: transparent;
-	border: 1px solid white;
+	border: 1px solid $color-white;
 	color: $color-white;
 
 	&:hover {
 		background: $bg-pink;
-		color: $color-pink;
+		color: $color-white;
 	}
 }
 
 .btn--outline-black {
 	background: transparent;
-	border: 1px solid #052e4c;
+	border: 1px solid $color-main;
 	color: $color-main;
 
 	&:hover {
 		background: $bg-pink;
-		color: $color-pink;
+		color: $color-white;
+		border: 1px solid $color-pink;
 	}
 }

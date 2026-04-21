@@ -1,0 +1,174 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.offers {
+	margin-bottom: 130px;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    gap: 32px;
+  }
+  &__card {
+    max-width: 256px;
+		height: 536px;
+    padding: 16px 16px 40px 16px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+		display: flex;
+		flex-direction: column;
+
+
+    &-image {
+      position: relative;
+      width: 224px;
+      height: auto;
+      margin-bottom: 24px;
+    }
+    &-badge {
+      @include flex-center;
+
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      background-color: $bg-white;
+      font-family: $font-secondary;
+      font-weight: 700;
+      font-size: 20px;
+      color: $color-pink;
+    }
+
+    &-tags {
+      position: absolute;
+      top: 24px;
+      left: 16px;
+      display: flex;
+    }
+
+    &-colors {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+    }
+    &-color {
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid $color-main;
+        opacity: 0;
+        transition: 0.2s;
+        pointer-events: none;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+
+      &--active {
+
+        &::after {
+          opacity: 1; 
+          border: none; 
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 8px;
+          height: 8px;
+          border: 1px solid $color-main;
+          border-radius: 50%;
+          background: transparent;
+          pointer-events: none;
+          z-index: 1; 
+        }
+      }
+    }
+
+    &-title {
+      font-weight: 400;
+      font-size: 16px;
+      max-width: 200px;
+      margin-bottom: 24px;
+    }
+    &-price {
+      display: flex;
+      align-items: flex-end;
+			margin-top: auto;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-family: $font-third;
+      font-size: 20px;
+      font-style: italic;
+
+      &--new {
+        font-family: $font-secondary;
+        font-weight: 700;
+        font-size: 32px;
+        margin-bottom: -3px;
+      }
+      &--old {
+        color: rgba(0, 0, 0, 0.2);
+        font-family: $font-secondary;
+        font-weight: 400;
+        font-size: 32px;
+        margin-bottom: -3px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+
+          top: 50%;
+          left: 0;
+          right: 0;
+
+          height: 1px;
+          background-color: $color-pink;
+          transform: rotate(150deg);
+        }
+      }
+    }
+
+    &-action {
+      display: flex;
+      gap: 16px;
+    }
+    &-button {
+      padding: 0;
+      transition: color 0.3s ease;
+      &:hover{
+        svg path{
+          stroke: $color-pink;
+        }
+        svg circle{
+          stroke: $color-pink;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: rgba(227, 246, 245, 0.3);
+    }
+  }
+}

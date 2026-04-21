@@ -1,0 +1,87 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.popular {
+ 
+  position: relative;
+  height: 672px;
+  background: linear-gradient(to right, $bg-dark-green 0%, $bg-dark-green calc(100% - 160px), $bg-dark-blue calc(100% - 160px), $bg-dark-blue 100%);
+  margin-bottom: 130px;
+
+  @include section-label("Популярное", -5px, 88px, 300px);
+  &__container {
+    max-width: 1120px;
+    margin-left: 88px;
+    padding-top: 192px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 480px;
+
+    grid-template-areas:
+      "one one four four"
+      "two three four four";
+
+    &-item {
+      &:nth-child(1) {
+        grid-area: one;
+      }
+
+      &:nth-child(2) {
+        grid-area: two;
+      }
+
+      &:nth-child(3) {
+        grid-area: three;
+      }
+
+      &:nth-child(4) {
+        grid-area: four;
+      }
+    }
+
+    &-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+
+      font-family: $font-third;
+      font-size: 25px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-style: italic;
+
+      text-decoration: none;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &--one {
+        background-image: url("/images/popular-one.png");
+      }
+
+      &--two {
+        background-image: url("/images/popular-two.png");
+      }
+
+      &--three {
+        background-image: url("/images/popular-three.png");
+        color: $color-white;
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      &--four {
+        background-image: url("/images/popular-four.png");
+      }
+
+      span {
+        font-weight: 400;
+        font-style: normal;
+      }
+    }
+  }
+}

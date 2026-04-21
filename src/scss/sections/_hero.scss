@@ -1,0 +1,63 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.hero {
+  background-image: url("/images/hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+		
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+		color: $color-main;
+		margin-top: 168px;
+    &-title {
+      font-family: $font-third;
+      font-size: 78px;
+      text-transform: uppercase;
+      font-weight: 300;
+			line-height: 1;
+      span {
+        font-style: italic;
+        font-weight: 600;
+      }
+    }
+		&-subtitle{
+			max-width: 477px;
+		}
+  }
+
+	&__action{
+		margin-top: 56px;
+		display: flex;
+		align-self: flex-start;
+		gap: 17px;
+		align-items: center;
+		&-basket{
+			padding: 0;
+			width: 40px;
+			height: 40px;
+			background-color: $bg-white;
+			border-radius: 100%;
+			&:hover{
+				background-color: $bg-pink;
+				svg path{
+					stroke: $color-white;
+				}
+				svg circle {
+					stroke: $color-white;
+				}
+			}
+		}
+	}
+}

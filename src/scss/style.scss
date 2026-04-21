@@ -4,6 +4,15 @@
 @use './utils/variables' as *;
 
 
-@use './components/header';
 @use './components/button';
-@use './components/sidebar';
+
+@use './layout/sidebar';
+@use './layout/footer';
+
+@use './sections/hero';
+@use './sections/popular';
+@use './sections/offers';
+@use './sections/quiz';
+@use './sections/cooperation';
+@use './sections/sales';
+@use './sections/examples';
