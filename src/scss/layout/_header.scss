@@ -16,7 +16,14 @@
     text-align: center;
     color: $color-dark-green;
   }
-	
+
+  &__button {
+  
+    &--basket {
+      position: relative;
+    }
+  }
+
   @include tablet {
     display: block;
   }

@@ -14,40 +14,65 @@
     background-color: $bg-light;
     padding-left: 184px;
     @include section-label("Акции", -5px, 88px, 300px, $color-main);
+
+    @include tablet {
+      height: auto;
+      padding-left: 0;
+      padding-top: 40px;
+      @include section-label("Акции", 200px, 350px, 300px, $color-main);
+    }
+
+    @include small {
+      @include section-label("Акции", 250px, 150px, 300px, $color-main);
+    }
   }
 
   &__item {
     display: flex;
     gap: 48px;
     align-items: center;
+    @include tablet {
+      flex-direction: column-reverse;
+    }
   }
 
   &__media {
     width: 544px;
-		position: relative;
+    position: relative;
+    @include mobile {
+      width: 500px;
+    }
+    @include small {
+      width: 100%;
+    }
   }
 
-	&__tag{
-		@include flex-center;
-		position: absolute;
-		top: 16px;
-		left: -32px;
-		background-color: $bg-pink;
-		padding: 8px;
-		color: $color-white;
-		width: max-content;
-		font-weight: 300;
-		font-size: 13px;
-		font-family: $font-main;
-		line-height: 1;
-		height: 33px;
-		
-	}
 
+  &__tag {
+    @include flex-center;
+    position: absolute;
+    top: 16px;
+    left: -32px;
+    background-color: $bg-pink;
+    padding: 8px;
+    color: $color-white;
+    width: max-content;
+    font-weight: 300;
+    font-size: 13px;
+    font-family: $font-main;
+    line-height: 1;
+    height: 33px;
+    @include mobile {
+      left: 0;
+    }
+  }
 
   &__info {
     background-color: $bg-dark-blue;
     padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     &-title {
       font-family: $font-third;
       font-weight: 500;
@@ -57,6 +82,24 @@
       color: $color-white;
       max-width: 300px;
     }
+    @include small {
+      padding: 41px 41px 41px 20px;
+    }
+  }
+
+  &__actions{
+    &-button{
+      svg path{
+        fill: $color-white;
+      }
+    }
+    &-counter{
+      color: $color-white;
+    }
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__content {
@@ -64,6 +107,10 @@
     flex-direction: column;
     gap: 40px;
     max-width: 430px;
+    @include small {
+      width: 100%;
+      padding: 0 20px;
+    }
   }
   &__title {
     font-family: $font-secondary;
@@ -71,6 +118,9 @@
     font-size: 62px;
     line-height: 90%;
     letter-spacing: -0.03em;
+    @include small {
+      font-size: 40px;
+    }
   }
   &__benefits {
     display: flex;
@@ -85,7 +135,10 @@
       flex: 0 0 auto;
     }
     &-name {
-			max-width: 350px;
+      max-width: 350px;
     }
+  }
+  @include mobile {
+    margin-bottom: 48px;
   }
 }

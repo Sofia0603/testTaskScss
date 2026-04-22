@@ -111,12 +111,12 @@
     }
   }
   @include mobile {
+    @include section-label("Популярное", 0px, 31px, 300px);
     height: max-content;
     margin-bottom: 48px;
     background: linear-gradient(to bottom, $bg-dark-green 0%, $bg-dark-green calc(100% - 48px), $bg-dark-blue calc(100% - 160px), $bg-dark-blue 100%);
   }
   @include small {
     height: auto;
-
   }
 }

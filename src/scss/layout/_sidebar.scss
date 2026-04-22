@@ -29,6 +29,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    flex: 0 0 auto;
   }
   &__logo-open {
     display: none;
@@ -41,7 +42,7 @@
   &__button {
     transition: background-color 0.3s ease;
     margin-bottom: 48px;
-    &:hover {
+    @include hover {
       svg line {
         stroke: $color-pink;
       }
@@ -61,7 +62,7 @@
       svg {
         width: 25px;
       }
-      &:hover {
+      @include hover {
         svg {
           path {
             fill: $color-pink;
@@ -96,6 +97,10 @@
     border-radius: 100%;
     width: 25px;
     height: 25px;
+    margin-top: 20px;
+    &-input {
+      display: none;
+    }
   }
 
   &__open-info {
@@ -120,13 +125,13 @@
     text-transform: uppercase;
     text-align: center;
     transition: color 0.3s ease;
-    &:hover {
+    @include hover {
       color: $color-pink;
     }
   }
 
   @include tablet {
-   display: none;
+    display: none;
   }
 }
 
@@ -137,6 +142,12 @@
   height: 100vh;
   width: 224px;
   z-index: 1000;
+  overflow-y: auto;
+  background-color: $bg-white;
+
+  @include tablet {
+    display: flex;
+  }
 }
 
 .sidebar--open .sidebar__nav-text {
@@ -164,4 +175,30 @@
 .sidebar--open .sidebar__open-info {
   display: flex;
   margin-top: 20px;
+}
+.sidebar--open .sidebar__search {
+  width: 100%;
+  border: 1px solid $bg-dark-green;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  &-icon {
+    position: absolute;
+    left: 7px;
+    width: 15px;
+    height: 15px;
+  }
+}
+.sidebar--open .sidebar__search-input {
+  display: flex;
+  padding-left: 20px;
+  color: $color-main;
+  font-size: 13px;
+
+  &::placeholder {
+    color: $color-main;
+    opacity: 0.6;
+  }
 }

@@ -1,6 +1,6 @@
 @use "../utils/mixins" as *;
 @use "../utils/variables" as *;
-
+@use "sass:color";
 .quiz {
   margin-bottom: 130px;
 
@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     @include mobile {
-     padding: 24px 24px 40px 24px;
+      padding: 24px 24px 40px 24px;
     }
   }
   &__legend {
@@ -141,6 +141,9 @@
   }
 
   &__option:hover &__option-box {
-    border-color: darken($bg-dark-green, 10%);
+    border-color: color.adjust($bg-dark-green, $lightness: -10%);
+  }
+  @include mobile {
+    margin-bottom: 48px;
   }
 }

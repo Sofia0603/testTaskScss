@@ -22,17 +22,6 @@
   }
 
   &__actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    &-button {
-      transition: fill 0.3s ease;
-      &:hover {
-        svg path {
-          fill: $color-pink;
-        }
-      }
-    }
     @include small {
       display: none;
     }
@@ -196,7 +185,7 @@
     &-button {
       padding: 0;
       transition: color 0.3s ease;
-      &:hover {
+      @include hover {
         svg path {
           stroke: $color-pink;
         }
@@ -206,10 +195,10 @@
       }
     }
 
-    &:hover {
+    @include hover {
       background-color: rgba(227, 246, 245, 0.3);
       @include mobile {
-         background-color: transparent;
+        background-color: transparent;
       }
     }
 

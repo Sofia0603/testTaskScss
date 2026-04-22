@@ -1,5 +1,7 @@
+import hero1 from "../assets/hero.png";
+import hero2 from "../assets/hero2.webp";
 document.addEventListener("DOMContentLoaded", () => {
-  const heroImages = ["/images/hero.png", "/images/hero2.webp"];
+  const heroImages = [hero1, hero2];
 
   const hero = document.querySelector(".hero");
   const counter = document.querySelector(".hero__counter");
@@ -12,10 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".hero__nav-button--prev",
     },
 
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     allowTouchMove: false,
     simulateTouch: false,
     noSwiping: true,

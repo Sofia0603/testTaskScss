@@ -17,16 +17,39 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 60px;
+    @include tablet {
+      flex-direction: column;
+    }
   }
-
+  &__block {
+    width: 100%;
+    @include tablet {
+      text-align: center;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    @include tablet {
+      max-width: 500px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+  }
   &__list {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
+  &__item {
+    @include small {
+      text-align: left;
+    }
+  }
   &__link {
     transition: color 0.3s ease;
-    &:hover {
+    @include hover {
       color: $color-pink;
     }
   }
@@ -49,19 +72,33 @@
   &__phones {
     display: flex;
     gap: 22px;
+    @include tablet {
+      justify-content: center;
+    }
+    @include small {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
   &__phone {
     font-family: $font-third;
     font-weight: 700;
     font-size: 25px;
     transition: color 0.3s ease;
-    &:hover {
+    white-space: nowrap;
+    @include hover {
       color: $color-pink;
     }
   }
   &__button {
     margin-bottom: 61px;
-		width:236px;
+    width: 100%;
+    @include tablet {
+      max-width: 236px;
+    }
+    @include mobile {
+      margin-bottom: 30px;
+    }
   }
   &__email {
     margin-bottom: 24px;
@@ -70,21 +107,32 @@
     gap: 2px;
     &-link {
       transition: color 0.3s ease;
-      &:hover {
+      @include hover {
         color: $color-pink;
       }
+    }
+    @include mobile {
+      flex-direction: row;
+      justify-content: center;
+      gap: 10px;
     }
   }
   &__socials {
     display: flex;
     gap: 14px;
+    @include tablet {
+      justify-content: center;
+    }
+    @include mobile {
+      gap: 30px;
+    }
   }
   &__social {
     &-link {
       font-weight: 700;
       color: $bg-white;
       transition: color 0.3s ease;
-      &:hover {
+      @include hover {
         color: $color-dark-green;
       }
     }
@@ -94,18 +142,57 @@
     color: rgba(255, 255, 255, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding-top: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "year links company";
+    .footer__block {
+      &:last-child {
+        text-align: right;
+      }
+      &--year {
+        grid-area: year;
+      }
+      &--links {
+        grid-area: links;
+      }
+      &--company {
+        grid-area: company;
+      }
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr 3fr 1fr;
+      margin-left: -20px;
+      margin-right: -20px;
+
+      .footer__block:last-child {
+        text-align: center;
+      }
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "links"
+        "year"
+        "company";
+      gap: 20px;
+    }
   }
+
   &__actions {
     display: flex;
+    justify-content: center;
+
     gap: 16px;
     &-link {
       transition: color 0.3s ease;
-      &:hover {
+      @include hover {
         color: rgba(255, 255, 255, 1);
       }
+    }
+
+    @include small {
+      flex-direction: column;
     }
   }
 }

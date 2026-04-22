@@ -1,66 +1,66 @@
-@use '../utils/variables' as *;
-
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
 .btn {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-	padding: 12px 24px;
+  padding: 12px 24px;
 
-	font-size: 13px;
-	text-transform: uppercase;
-	font-family: $font-main;
-	font-weight: 400;
-	line-height: 1;
-	cursor: pointer;
-	transition: all 0.2s ease;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: $font-main;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
 
-	border: 1px solid transparent;
-	text-decoration: none;
+  border: 1px solid transparent;
+  text-decoration: none;
 
-	width: max-content;
+  width: max-content;
 }
 
 .btn--white {
-	background: $bg-white;
-	color: $color-main;
+  background: $bg-white;
+  color: $color-main;
 
-	&:hover {
-		background: $bg-pink;
-		color: $color-white;
-	}
+  @include hover {
+    background: $bg-pink;
+    color: $color-white;
+  }
 }
 
 .btn--pink {
-	background: $bg-pink;
-	color: $color-white;
+  background: $bg-pink;
+  color: $color-white;
 
-	&:hover {
-		background: $bg-white;
-		color: $color-main;
-		border: 1px solid$color-main;
-	}
+  @include hover {
+    background: $bg-white;
+    color: $color-main;
+    border: 1px solid$color-main;
+  }
 }
 
 .btn--outline-white {
-	background: transparent;
-	border: 1px solid $color-white;
-	color: $color-white;
+  background: transparent;
+  border: 1px solid $color-white;
+  color: $color-white;
 
-	&:hover {
-		background: $bg-pink;
-		color: $color-white;
-	}
+  @include hover {
+    background: $bg-pink;
+    color: $color-white;
+  }
 }
 
 .btn--outline-black {
-	background: transparent;
-	border: 1px solid $color-main;
-	color: $color-main;
+  background: transparent;
+  border: 1px solid $color-main;
+  color: $color-main;
 
-	&:hover {
-		background: $bg-pink;
-		color: $color-white;
-		border: 1px solid $color-pink;
-	}
+  @include hover {
+    background: $bg-pink;
+    color: $color-white;
+    border: 1px solid $color-pink;
+  }
 }

@@ -19,7 +19,7 @@
     <header class="header">
       <div class="container">
         <div class="header__inner">
-          <button class="button" class="header__button header__button-open">
+          <button type="button" class="header__button header__button-open">
             <svg width="24" height="13" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line y1="0.5" x2="24" y2="0.5" stroke="#417A82" />
               <line y1="6.5" x2="24" y2="6.5" stroke="#417A82" />
@@ -27,7 +27,7 @@
             </svg>
           </button>
           <div class="header__logo">LOGO</div>
-          <button class="button" class="header__button header__button-basket">
+          <button type="button" class="header__button header__button--basket">
             <svg width="29" height="23" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11.9149 4.66147H28L26.2128 14.7679H10.7234L5.95745 0.5H0" stroke="#417A82" stroke-linejoin="round" />
               <path
@@ -39,6 +39,7 @@
                 stroke="#417A82"
               />
             </svg>
+            <span class="counter header__button-counter">3</span>
           </button>
         </div>
       </div>
@@ -303,16 +304,15 @@
         </nav>
 
         <div class="sidebar__search">
-          <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="sidebar__search-icon">
             <circle cx="4.5" cy="4.5" r="4" transform="matrix(-1 0 0 1 9 0)" stroke="#417A82" />
             <path d="M6.50012 7.5L10.4242 12.5435" stroke="#417A82" />
           </svg>
+          <input type="search" class="sidebar__search-input" placeholder="Поиск" />
         </div>
       </aside>
 
       <main class="main">
-       
-
         <section class="hero">
           <div class="container">
             <div class="hero__inner">
@@ -352,20 +352,21 @@
               </div>
 
               <div class="hero__action">
-                <button class="btn btn--pink">Заказать замер</button>
+                <button type="button" class="btn btn--pink">Заказать замер</button>
 
-                <button class="btn hero__action-basket">
+                <button type="button" class="btn hero__action-button">
                   <svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.83784 3.24324H18.4189L17.2432 9.9054H7.05405L3.91892 0.5H0" stroke="#417A82" stroke-linejoin="round" />
                     <circle cx="8.62128" cy="13.4323" r="1.06757" stroke="#417A82" />
                     <circle cx="15.676" cy="13.4323" r="1.06757" stroke="#417A82" />
                   </svg>
+                  <span class="counter hero__action-counter">3</span>
                 </button>
               </div>
             </div>
 
-            <div class="hero__nav">
-              <button class="hero__nav-button hero__nav-button--prev">
+            <div class="slider-controls hero__nav">
+              <button class="slider-controls__button hero__nav-button--prev">
                 <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill-rule="evenodd"
@@ -376,7 +377,7 @@
                 </svg>
               </button>
               <div class="hero__counter">1 / 3</div>
-              <button class="hero__nav-button hero__nav-button--next">
+              <button class="slider-controls__button hero__nav-button--next">
                 <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill-rule="evenodd"
@@ -417,8 +418,8 @@
               <div class="offers__header">
                 <h2 class="offers__title">Лучшие предложения</h2>
 
-                <div class="offers__actions">
-                  <button type="button" class="offers__actions-button">
+                <div class="slider-controls offers__actions">
+                  <button type="button" class="slider-controls__button offers__actions-button">
                     <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fill-rule="evenodd"
@@ -429,9 +430,9 @@
                     </svg>
                   </button>
 
-                  <div class="offers__counter">1 / 3</div>
+                  <div class="slider-controls__counter offers__counter">1 / 3</div>
 
-                  <button type="button" class="offers__actions-button">
+                  <button type="button" class="slider-controls__button offers__actions-button">
                     <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fill-rule="evenodd"
@@ -448,28 +449,28 @@
                   <div class="offers__card-media">
                     <div class="offers__card-badge">-10%</div>
                     <!-- <div class="offers__card-tags">
-								<img src="/images/tags/tag-one.png" class="offers__card-tag" alt="" />
-								<img src="/images/tags/tag-two.png" class="offers__card-tag" alt="" />
-								<img src="/images/tags/tag-three.png" class="offers__card-tag" alt="" />
-							</div> -->
+                    <img src="/images/tags/tag-one.png" class="offers__card-tag" alt="" />
+                    <img src="/images/tags/tag-two.png" class="offers__card-tag" alt="" />
+                    <img src="/images/tags/tag-three.png" class="offers__card-tag" alt="" />
+                  </div> -->
                     <div class="offers__card-colors">
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color1.png" alt="color" />
+                        <img src="/images/colors/color1.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color offers__card-color--active">
-                        <img src="/images/colors/color2.png" alt="color" />
+                        <img src="/images/colors/color2.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color3.png" alt="color" />
+                        <img src="/images/colors/color3.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color4.png" alt="color" />
+                        <img src="/images/colors/color4.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color5.png" alt="color" />
+                        <img src="/images/colors/color5.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color6.png" alt="color" />
+                        <img src="/images/colors/color6.png" alt="color" loading="lazy" />
                       </button>
                     </div>
                     <img src="/images/offer-one.png" class="offers__card-img" alt="" loading="lazy" />
@@ -501,13 +502,13 @@
 							</div> -->
                     <div class="offers__card-colors">
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color1.png" alt="color" />
+                        <img src="/images/colors/color1.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color offers__card-color--active">
-                        <img src="/images/colors/color2.png" alt="color" />
+                        <img src="/images/colors/color2.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color3.png" alt="color" />
+                        <img src="/images/colors/color3.png" alt="color" loading="lazy" />
                       </button>
                     </div>
                     <img src="/images/offer-two.png" class="offers__card-img" alt="" loading="lazy" />
@@ -539,13 +540,13 @@
 							</div> -->
                     <div class="offers__card-colors">
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color1.png" alt="color" />
+                        <img src="/images/colors/color1.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color offers__card-color--active">
-                        <img src="/images/colors/color2.png" alt="color" />
+                        <img src="/images/colors/color2.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color3.png" alt="color" />
+                        <img src="/images/colors/color3.png" alt="color" loading="lazy" />
                       </button>
                     </div>
                     <img src="/images/offer-three.png" class="offers__card-img" alt="" loading="lazy" />
@@ -577,16 +578,16 @@
                     </div> -->
                     <div class="offers__card-colors">
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color1.png" alt="color" />
+                        <img src="/images/colors/color1.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color offers__card-color--active">
-                        <img src="/images/colors/color2.png" alt="color" />
+                        <img src="/images/colors/color2.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color3.png" alt="color" />
+                        <img src="/images/colors/color3.png" alt="color" loading="lazy" />
                       </button>
                       <button type="button" class="offers__card-color">
-                        <img src="/images/colors/color4.png" alt="color" />
+                        <img src="/images/colors/color4.png" alt="color" loading="lazy" />
                       </button>
                     </div>
                     <img src="/images/offer-four.png" class="offers__card-img" alt="" loading="lazy" />
@@ -699,9 +700,236 @@
             </div>
           </div>
         </section>
+        <section class="cooperation">
+          <h2 class="visually-hidden">Коммерческие предложения</h2>
+          <div class="container">
+            <div class="cooperation__inner">
+              <div class="cooperation__offer cooperation__offer--diz">
+                <h3 class="cooperation__offer-title">
+                  Дилерам
+                  <br />
+                  <span>и</span>
+                  Дизайнерам
+                </h3>
+                <p class="cooperation__offer-subtitle">Каждый веб-разработчик знает, что такое текст-«рыба»Каждый веб-разработчик знает, что такое текст-«рыба»</p>
+                <button type="button" class="btn btn--outline-white">заявка на сотрудничество</button>
+              </div>
+              <div class="cooperation__offer cooperation__offer--buyers">
+                <h3 class="cooperation__offer-title">Коммерческим покупателям</h3>
+                <p class="cooperation__offer-subtitle">Текст этот, несмотря на название, не имеет никакого отношения к обитателям водоемов</p>
+                <button type="button" class="btn btn--outline-white">запросить коммерческое предложение</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="sales">
+          <h2 class="visually-hidden">Акции</h2>
+          <div class="sales__inner">
+            <div class="sales__item">
+              <div class="sales__media">
+                <div class="sales__tag">С 10 по 30 января</div>
+                <div class="sales__image">
+                  <img src="/images/sales/sales.png" alt="" />
+                </div>
+                <div class="sales__info">
+                  <div class="sales__info-title">Для коммерческих помещений</div>
+                  <div class="slider-controls sales__actions">
+                    <button type="button" class="slider-controls__button sales__actions-button">
+                      <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M1.41424 11.3536L12.0607 0.707107L11.3536 0L2.23877e-05 11.3536L11.3536 22.7071L12.0607 22L1.41424 11.3536Z"
+                          fill="#052E4C"
+                        />
+                      </svg>
+                    </button>
+
+                    <div class="slider-controls__counter sales__actions-counter">2 / 3</div>
+
+                    <button type="button" class="slider-controls__button sales__actions-button">
+                      <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M11.5858 11.3536L0.93934 22L1.64645 22.7071L13 11.3536L1.64645 0L0.93934 0.707107L11.5858 11.3536Z"
+                          fill="#052E4C"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="sales__content">
+                <div class="sales__title">Получай бонусы и скидки</div>
+                <div class="sales__benefits">
+                  <div class="sales__benefit">
+                    <div class="sales__benefit-icon">
+                      <img src="/images/benefit1.svg" alt="" />
+                    </div>
+                    <div class="sales__benefit-name">Специалисты сервисного центра обладают уникальным знаниями в обслуживании американских автомобилей.</div>
+                  </div>
+                  <div class="sales__benefit">
+                    <div class="sales__benefit-icon">
+                      <img src="/images/benefit2.svg" alt="" />
+                    </div>
+                    <div class="sales__benefit-name">Удобная система скидок для постоянных клиентов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="examples">
+          <div class="examples__wrapper">
+            <div class="container">
+              <div class="examples__inner">
+                <div class="examples__header">
+                  <h2 class="examples__title">Примеры работ</h2>
+
+                  <div class="slider-controls examples__actions">
+                    <button type="button" class="slider-controls__button examples__actions-button">
+                      <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M1.41424 11.3536L12.0607 0.707107L11.3536 0L2.23877e-05 11.3536L11.3536 22.7071L12.0607 22L1.41424 11.3536Z"
+                          fill="#052E4C"
+                        />
+                      </svg>
+                    </button>
+
+                    <button type="button" class="slider-controls__button examples__actions-button">
+                      <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M11.5858 11.3536L0.93934 22L1.64645 22.7071L13 11.3536L1.64645 0L0.93934 0.707107L11.5858 11.3536Z"
+                          fill="#052E4C"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="examples__content">
+                  <div class="example">
+                    <div class="example__image">
+                      <img src="/images/examples/example1.png" alt="" />
+                    </div>
+                    <div class="example__name">Каждый веб-разработчик знает, что такое текст-«рыба».</div>
+                  </div>
+                  <div class="example">
+                    <div class="example__image">
+                      <img src="/images/examples/example2.png" alt="" />
+                    </div>
+                    <div class="example__name">Используется он веб-дизайнерами для вставки на интернет-страницы</div>
+                  </div>
+                  <div class="example">
+                    <div class="example__image">
+                      <img src="/images/examples/example3.png" alt="" />
+                    </div>
+                    <div class="example__name">Текст этот не имеет никакого отношения к содержанию</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
-
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__top">
+            <div class="footer__wrapper">
+              <div class="footer__block">
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Lorem</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Lorem</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Lorem</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Lorem</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Lorem</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Lorem</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__block">
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">О компании</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Отзывы</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Блог</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">Контакты</a>
+                  </li>
+                  <li class="footer__item">
+                    <a href="#" class="footer__link">
+                      Коммерческим
+                      <br />
+                      покупателям
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__block">
+              <div class="footer__logo">LOGO</div>
+              <div class="footer__address">Москва и МО</div>
+              <div class="footer__time">
+                <div>Режим работы:</div>
+                <div>ежедневно с 9:00 до 21:00</div>
+              </div>
+              <div class="footer__phones">
+                <a href="tel:+79555452381" class="footer__phone">8 955 545 23 81</a>
+                <a href="tel:+79555152181" class="footer__phone">8 955 515 21 81</a>
+              </div>
+            </div>
+            <div class="footer__block">
+              <button type="button" class="btn btn--outline-white footer__button">калькулятор</button>
+              <div class="footer__email">
+                <div>E-mail:</div>
+                <a href="mail:info@lorem.ru" class="footer__email-link">info@lorem.ru</a>
+              </div>
+              <div class="footer__socials">
+                <a href="#" class="footer__social-link">FB</a>
+                <a href="#" class="footer__social-link">OK</a>
+                <a href="#" class="footer__social-link">VK</a>
+                <a href="#" class="footer__social-link">TW</a>
+                <a href="#" class="footer__social-link">IN</a>
+                <a href="#" class="footer__social-link">YT</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__block footer__block--year">© 2020 Lorem</div>
+            <div class="footer__block footer__block--links">
+              <div class="footer__actions">
+                <a href="#" class="footer__actions-link">Правила использования cookie</a>
+                <a href="#" class="footer__actions-link">Пользовательское соглашение</a>
+                <a href="#" class="footer__actions-link">Карта сайта</a>
+              </div>
+            </div>
+            <div class="footer__block footer__block--company">Разработка — Lorem</div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="/src/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="/src/scripts/slider.js"></script>

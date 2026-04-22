@@ -32,10 +32,10 @@
         font-weight: 600;
       }
       @include tablet {
-         font-size: 60px;
+        font-size: 60px;
       }
       @include small {
-         font-size: 42px;
+        font-size: 42px;
       }
     }
     &-subtitle {
@@ -47,7 +47,7 @@
     }
     @include small {
       margin-top: 48px;
-			gap: 35px;
+      gap: 35px;
     }
   }
 
@@ -57,13 +57,18 @@
     align-self: flex-start;
     gap: 17px;
     align-items: center;
-    &-basket {
+    &-button {
+      position: relative;
       padding: 0;
       width: 40px;
       height: 40px;
       background-color: $bg-white;
       border-radius: 100%;
-      &:hover {
+      padding-right: 2px;
+      transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+       @include hover {
         background-color: $bg-pink;
         svg path {
           stroke: $color-white;
@@ -71,10 +76,14 @@
         svg circle {
           stroke: $color-white;
         }
+        .hero__action-counter {
+          transform: translateY(-10px);
+          transition: transform 0.3s ease;
+        }
       }
     }
 
-		@include tablet {
+    @include tablet {
       display: none;
     }
   }
@@ -82,19 +91,10 @@
   &__nav {
     position: absolute;
     bottom: 50px;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    &-button {
-      &:hover {
-        svg path {
-          fill: $color-pink;
-        }
-      }
-    }
   }
 
-	@include small {
-	height: calc(100vh - 80px);
-	}
+  @include tablet {
+    height: calc(100vh - 80px);
+    background-position: left center;
+  }
 }

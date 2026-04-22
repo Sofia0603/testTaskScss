@@ -8,6 +8,12 @@
     padding-top: 96px;
     background-color: $bg-dark-green;
     max-height: 468px;
+    @include mobile {
+      padding-top: 48px;
+    }
+    @include mobile {
+      max-height: 265px;
+    }
   }
   &__inner {
     display: flex;
@@ -21,14 +27,15 @@
     align-items: center;
   }
   &__actions {
-    display: flex;
     gap: 28px;
     &-button {
-      &:hover {
-        svg path {
-          fill: $color-pink;
-        }
+      svg path {
+        fill: $color-white;
       }
+    }
+
+    @include mobile {
+      display: none;
     }
   }
 
@@ -39,11 +46,32 @@
     line-height: 90%;
     letter-spacing: -0.03em;
     color: $color-white;
+    @include mobile {
+      font-size: 40px;
+    }
   }
 
   &__content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: 368px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    @include tablet {
+      gap: 20px;
+      margin-right: -40px;
+      margin-left: -40px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    @include mobile {
+      grid-auto-columns: 248px;
+    }
+  }
+
+  &__content::-webkit-scrollbar {
+    display: none;
   }
   .example {
     display: flex;
@@ -60,7 +88,17 @@
       img {
         width: 100%;
         height: 368px;
+        @include mobile {
+          height: 202px;
+        }
       }
     }
+  }
+  @include mobile {
+    margin-bottom: 48px;
+    height: 450px;
+  }
+  @include small {
+    margin-bottom: 0px;
   }
 }
