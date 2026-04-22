@@ -49,6 +49,7 @@
     }
   }
   &__nav {
+    margin-bottom: 20px;
     &-list {
       display: flex;
       flex-direction: column;
@@ -97,7 +98,8 @@
     border-radius: 100%;
     width: 25px;
     height: 25px;
-    margin-top: 20px;
+    flex: 0 0 auto;
+  
     &-input {
       display: none;
     }
